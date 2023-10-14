@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 
-// mongoose.connect("mongodb+srv://priyanshu:priyanshu@mern-estate.hy1bmxt.mongodb.net/?retryWrites=true&w=majority")
+
 
 mongoose.connect(process.env.MONGO).then(()=>{
     console.log("connect to mongoDB!!!")
