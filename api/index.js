@@ -4,15 +4,16 @@ import dotenv from "dotenv";
 dotenv.config();
 
 
+
 mongoose.connect(process.env.MONGO).then(()=>{
-    console.log("connect to MongoDB!!!")
+    console.log("connect to mongoDB!!!")
 })
 .catch((err)=>{
     console.log(err);
 })
 
 
- 
+
 
 const app=express();
 
