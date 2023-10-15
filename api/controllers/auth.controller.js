@@ -1,7 +1,9 @@
 import User from "../models/user.model.js"
+// import errorHandler from '../utils/error.js';
 import bcyrptjs from 'bcryptjs';
+import { errorHandler } from "../utils/error.js";
 
-export const signup = async (req,res)=>{
+export const signup = async (req,res,next)=>{
 
     // console.log(req.body);
     //saving user inside the db.
@@ -16,11 +18,11 @@ export const signup = async (req,res)=>{
         
     } catch (error) {
 
-        res.status(500).json(error.message);
-        
+        //using middleware.
+    //    next(errorHandler(550,'error created by function'));
+       next(error);
+
     }
-
-
 
 
 };
