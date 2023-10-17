@@ -35,6 +35,7 @@ app.use("/api/user",userRouter)
 app.use("/api/auth",authRouter);
 
 //middleware for error..
+// this is called apne aap when we throw an error.
 app.use((err,req,res,next)=>{
 
     const statusCode = err.statusCode ||500;

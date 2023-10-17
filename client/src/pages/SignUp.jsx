@@ -63,6 +63,7 @@ const SignUp = () => {
     }
     
   }
+  
 
   
   
@@ -99,3 +100,4 @@ const SignUp = () => {
 }
 
 export default SignUp
+
