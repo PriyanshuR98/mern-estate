@@ -8,6 +8,7 @@ import { app } from '../firebase';
 import { deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutUserFailure, signOutUserStart, signOutUserSuccess, updateUserFailure,updateUserStart,updateUserSuccess } from '../redux/user/userSlice.js';
 
 import { useDispatch } from 'react-redux';
+import {Link} from 'react-router-dom';
 
 
 const Profile = () => {
@@ -200,7 +201,12 @@ const Profile = () => {
         <input type="password" placeholder='password' 
         className='p-3 border rounded-lg' id='password'onChange={handleChange}/>
 
-        <button disabled={loading} className='p-3 text-white uppercase rounded-lg bg-slate-700 hover:opacity-95 disabled:opacity-80'>{loading ? 'Loading...' : 'update'}</button>
+        <button disabled={loading} className='p-3 text-white uppercase rounded-lg bg-slate-700 hover:opacity-95 disabled:opacity-80'>{loading ? 'Loading...' : 'update'}
+        </button>
+        
+        <Link className='p-3 text-center text-white uppercase bg-green-700 rounded-lg hover:opacity-95' to={"/create-listing"}>
+          Create Listing
+        </Link>
 
         
       </form>
