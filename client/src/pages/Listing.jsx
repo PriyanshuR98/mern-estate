@@ -5,7 +5,6 @@ import SwiperCore from 'swiper';
 import { useSelector } from 'react-redux';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/bundle';
-
 import {
   FaBath,
   FaBed,
@@ -15,8 +14,7 @@ import {
   FaParking,
   FaShare,
 } from 'react-icons/fa';
-
-
+import Contact from '../components/Contact';
 
 
 export default function Listing() {
@@ -40,11 +38,9 @@ export default function Listing() {
           setLoading(false);
           return;
         }
-        
         setListing(data);
         setLoading(false);
         setError(false);
-        
       } catch (error) {
         setError(true);
         setLoading(false);
@@ -52,8 +48,6 @@ export default function Listing() {
     };
     fetchListing();
   }, [params.listingId]);
-
-  
 
   return (
     <main>
@@ -94,6 +88,7 @@ export default function Listing() {
             </p>
           )}
           <div className='flex flex-col max-w-4xl gap-4 p-3 mx-auto my-7'>
+            
             <p className='text-2xl font-semibold'>
               {listing.name} - ${' '}
               {listing.offer
@@ -101,10 +96,12 @@ export default function Listing() {
                 : listing.regularPrice.toLocaleString('en-US')}
               {listing.type === 'rent' && ' / month'}
             </p>
+
             <p className='flex items-center gap-2 mt-6 text-sm text-slate-600'>
               <FaMapMarkerAlt className='text-green-700' />
               {listing.address}
             </p>
+            
             <div className='flex gap-4'>
               <p className='bg-red-900 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
                 {listing.type === 'rent' ? 'For Rent' : 'For Sale'}
@@ -115,11 +112,11 @@ export default function Listing() {
                 </p>
               )}
             </div>
+            
             <p className='text-slate-800'>
               <span className='font-semibold text-black'>Description - </span>
               {listing.description}
             </p>
-            
             
             <ul className='flex flex-wrap items-center gap-4 text-sm font-semibold text-green-900 sm:gap-6'>
               
@@ -129,30 +126,35 @@ export default function Listing() {
                     ? `${listing.bedrooms} beds `
                     : `${listing.bedrooms} bed `}
                 </li>
-                
                 <li className='flex items-center gap-1 whitespace-nowrap '>
                   <FaBath className='text-lg' />
                   {listing.bathrooms > 1
                     ? `${listing.bathrooms} baths `
                     : `${listing.bathrooms} bath `}
                 </li>
-                
                 <li className='flex items-center gap-1 whitespace-nowrap '>
                   <FaParking className='text-lg' />
                   {listing.parking ? 'Parking spot' : 'No Parking'}
                 </li>
-                
                 <li className='flex items-center gap-1 whitespace-nowrap '>
                   <FaChair className='text-lg' />
                   {listing.furnished ? 'Furnished' : 'Unfurnished'}
                 </li>
                 
             </ul>
-            
+
+            {currentUser && listing.userRef !== currentUser._id && !contact && (
+              <button
+                onClick={() => setContact(true)}
+                className='p-3 text-white uppercase rounded-lg bg-slate-700 hover:opacity-95'
+              >
+                Contact landlord
+              </button>
+            )}
+            {contact && <Contact listing={listing} />}
           </div>
         </div>
       )}
     </main>
   );
 }
-
