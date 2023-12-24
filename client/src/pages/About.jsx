@@ -3,12 +3,23 @@ import React from 'react'
 export default function About() {
   return (
     <div className='max-w-6xl px-4 py-20 mx-auto'>
-      <h1 className='mb-4 text-3xl font-bold text-slate-800'>About Sahand Estate</h1>
-      <p className='mb-4 text-slate-700'>Sahand Estate is a leading real estate agency that specializes in helping clients buy, sell, and rent properties in the most desirable neighborhoods. Our team of experienced agents is dedicated to providing exceptional service and making the buying and selling process as smooth as possible.</p>
-      <p className='mb-4 text-slate-700'>
-      Our mission is to help our clients achieve their real estate goals by providing expert advice, personalized service, and a deep understanding of the local market. Whether you are looking to buy, sell, or rent a property, we are here to help you every step of the way.
+      <h1 className='mb-4 text-3xl font-bold text-slate-800'>About MERNville Estates</h1>
+      
+      <p className='mb-4 text-slate-700'>  
+      
+          Welcome to MERNville Estates, a premier real estate agency committed to delivering excellence in every aspect of your property journey. We specialize in assisting clients in buying, selling, and renting properties within the most coveted neighborhoods. Our team of seasoned agents is unwaveringly dedicated to ensuring a seamless and exceptional experience throughout the entire process.
       </p>
-      <p className='mb-4 text-slate-700'>Our team of agents has a wealth of experience and knowledge in the real estate industry, and we are committed to providing the highest level of service to our clients. We believe that buying or selling a property should be an exciting and rewarding experience, and we are dedicated to making that a reality for each and every one of our clients.</p>
+      
+      <p className='mb-4 text-slate-700'>
+      At MERNville Estates, our mission goes beyond transactions – we aim to empower our clients to achieve their real estate aspirations. With a foundation built on expert advice, personalized service, and an in-depth understanding of local markets, we are your trusted partner whether you're embarking on a purchase, sale, or rental journey.
+      </p>
+      
+      <p className='mb-4 text-slate-700'>Our team brings a wealth of experience and knowledge to the table, and we are steadfast in providing the utmost level of service to our clients. We firmly believe that the process of buying or selling a property should be both thrilling and fulfilling, and we are wholeheartedly committed to transforming that belief into reality for each of our clients.</p>
+      
+      <p className='mb-4 text-slate-700'>Choose MERNville Estates, where your real estate dreams become a tangible reality.
+       </p>
+
+      
     </div>
   )
 }

@@ -27,7 +27,6 @@ export default function Header() {
     }
   }, [location.search]);
 
-  
   return (
     <header className='shadow-md bg-slate-200'>
       <div className='flex items-center justify-between max-w-6xl p-3 mx-auto'>
@@ -35,8 +34,8 @@ export default function Header() {
         
         <Link to='/'>
           <h1 className='flex flex-wrap text-sm font-bold sm:text-xl'>
-            <span className='text-slate-500'>Sahand</span>
-            <span className='text-slate-700'>Estate</span>
+            <span className='text-slate-500'>MERNville </span>
+            <span className='text-slate-700'>Estates</span>
           </h1>
         </Link>
 
